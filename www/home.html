@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>派達心</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <script type="text/javascript" src="youtube.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="Html5Video.js"></script>
+    <script type="text/javascript" src="function.js"></script>
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.min.css" />
+    <script src="jqm/jquery-2.1.1.min.js"></script>
+    <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+    <script src="lib/sweet-alert.js"></script>
+    <link rel="stylesheet" href="slider/flexslider.css" type="text/css" media="screen" />
+    <script defer src="slider/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+    var b=0;
+    $(function() {
+        SyntaxHighlighter.all();
+    });
+    $(window).load(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function(slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+    </script>
+</head>
+
+<body onload="registerGCM()" class="loading">
+    <div data-role="page" id="page0" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="user_data.html" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content">
+
+            <ul data-role='listview' data-inset="false" style="border:transparent;background-image:url(pic/b_home.png); background-repeat:no-repeat; background-size:100% 100%; height:200px;">
+                <div class="flexslider" style="margin:15px;">
+                    <ul class="slides">
+                        <li>
+                            <img src="images/1.jpg" />
+                        </li>
+                        <li>
+                            <img src="images/2.jpg" />
+                        </li>
+                        <li>
+                            <img src="images/3.jpg" />
+                        </li>
+                        <li>
+                            <img src="images/4.jpg" />
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+
+            <div class="ui-grid-c" align="center" style="border:transparent;background-image:url(pic/bkk.png); background-repeat:no-repeat; background-size:100% 100%;">
+                <div class="ui-block-a" style="width:33%;">
+                    <a href="store1.html" rel="external" data-transition="none" style="text-decoration:none;color:black;">
+                        <img src="logo/logo1.png" width="60px" style="margin-top:10px;">
+                        <h4 style="color:#222222;margin:0px;font-weight:normal;">生態綠</h4>
+                    </a>
+                </div>
+                <div class="ui-block-b" style="width:33%;">
+                    <a href="store2.html" rel="external" data-transition="none" style="text-decoration:none;color:black;">
+                        <img src="logo/logo2.png" width="60px" style="margin-top:10px;">
+                        <h4 style="color:#222222;margin:0px;font-weight:normal;">喜願共和國</h4>
+                    </a>
+                </div>
+                <div class="ui-block-c" style="width:33%;"><img src="logo/logo3.png" width="60px" style="margin-top:10px;">
+                    <h4 style="color:#222222;margin:0px;font-weight:normal;">日月老茶廠</h4>
+                </div>
+
+                <div class="ui-block-a" style="width:33%;"><img src="logo/logo4.png" width="60px" style="color:#222222;margin-top:25px;">
+                    <h4 style="margin:0px;font-weight:normal;">芳榮米廠</h4>
+                </div>
+                <div class="ui-block-b" style="width:33%;"><img src="logo/logo5.png" width="60px" style="margin-top:25px;">
+                    <h4 style="color:#222222;margin:0px;font-weight:normal;">光原社會<br/>企業</h4>
+                </div>
+                <div class="ui-block-c" style="width:33%;"><img src="logo/logo6.png" width="60px" style="margin-top:25px;">
+                    <h4 style="color:#222222;margin:0px;font-weight:normal;">勝利潛能<br/>發展中心</h4>
+                </div>
+
+                <div class="ui-block-a" style="width:33%;"><img src="logo/logo7.png" width="60px" style="margin-top:20px;">
+                    <h4 style="color:#222222;margin:0px;font-weight:normal;">上下游新聞<br/>市集</h4>
+                </div>
+                <div class="ui-block-b" style="width:33%;"><img src="logo/logo8.png" width="60px" style="margin-top:23px;">
+                    <h4 style="color:#222222;margin:0px;font-weight:normal;">四方報</h4>
+                </div>
+                <div class="ui-block-c" style="width:33%;"><img src="logo/logo9.png" width="60px" style="margin-top:20px;">
+                    <h4 style="color:#222222;margin:0px;font-weight:normal;">大誌</h4>
+                </div>
+            </div>
+
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+function registerGCM() {
+        try {
+            //設定參數，這些參數都可以在Variants上找到，也就是剛剛記錄的部份
+            var pushConfig = {
+                pushServerURL: "https://aerogear-smallhappiness.rhcloud.com/ag-push/",
+                senderID: "897963777706",
+                variantID: "4dd1a443-208a-43c0-aa95-5b7d282d904a",
+                variantSecret: "20f99952-5f1f-473f-9cb3-8b773120e468"
+            };
+            push.register(onNotification, successHandler, errorHandler, pushConfig);
+        } catch (e) {
+            alert(e);
+        }
+    }
+    //離開程式
+$("#a_exit").click(function() {
+    if (navigator.app) {
+        navigator.app.exitApp();
+    } else if (navigator.device) {
+        navigator.device.exitApp();
+    }
+});
+
+
+//註冊GCM與AeroGear
+$("#a_reg").click(function() {
+    try {
+        //設定參數，這些參數都可以在Variants上找到，也就是剛剛記錄的部份
+        var pushConfig = {
+            pushServerURL: "https://aerogear-smallhappiness.rhcloud.com/ag-push/",
+            senderID: "897963777706",
+            variantID: "4dd1a443-208a-43c0-aa95-5b7d282d904a",
+            variantSecret: "20f99952-5f1f-473f-9cb3-8b773120e468"
+        };
+        push.register(onNotification, successHandler, errorHandler, pushConfig);
+    } catch (e) {
+        alert(e);
+    }
+});
+
+
+//取消註冊
+$("#a_unreg").click(function() {
+    try {
+        push.unregister(un_successHandler, un_errorHandler);
+    } catch (e) {
+        alert(e);
+    }
+});
+
+
+//APP開啟期間如果接收到推播時的處理函數
+function onNotification(event) {
+    var pushword = event.alert;
+    // var sword = pushword.split("][");
+    // alert(pushword);
+    swal({
+        title: pushword,
+        type: "info"
+    });
+}
+
+//註冊成功的處理函數
+function successHandler() {
+    //  $("#showText").html("註冊成功");
+    // alert("註冊成功");
+}
+
+function errorHandler(error) {
+    // $("#showText").html("註冊失敗：" + error);
+    // alert("註冊失敗：" + error);
+}
+
+//取消註冊成功的處理函數
+function un_successHandler() {
+    // $("#showText").html("取消註冊成功");
+    // alert("取消註冊成功");
+}
+
+//取消註冊成功的處理函數
+function un_errorHandler(error) {
+    // $("#showText").html("取消註冊成功：" + error);
+    // alert("取消註冊成功：" + error);
+}
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>派達心</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <script type="text/javascript" src="youtube.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="Html5Video.js"></script>
+    <script type="text/javascript" src="function.js"></script>
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.min.css" />
+    <script src="jqm/jquery-2.1.1.min.js"></script>
+    <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+    <script src="lib/sweet-alert.js"></script>
+    <script type="text/javascript">
+    function showD() {
+        var a = $('#search').val();
+        if (a == '') {
+            swal("錯誤!", "請輸入關鍵字", "error");
+        } else {
+            $('#showresult').css('display', 'block');
+        }
+    }
+
+    function suc() {
+         swal("恭喜!", "成功放入購物車", "success");
+    }
+    </script>
+</head>
+
+<body>
+    <div data-role="page" id="page0" data-theme="c" style="background-image:url(pic/BG_pright.png); background-repeat:repeat-y; background-size:100% ">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="user_data.html" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <input type='search' id='search' name="q" lang="cmn-Hant-TW" x-webkit-speech x-webkit-grammar="builtin:search" onwebkitspeechchange="startSearch(event)" data-theme="a">
+            <input type='submit' id='submit' value='搜尋' data-theme="a" onclick="showD()">
+
+            <div id="showresult" style="display:none">
+            <div data-role="navbar">
+                <ul style="width:100%;">
+                    <li>
+                        <a href="#" id="btn1" rel="external" style="background-image:url(pic/bookshelf1.png); background-repeat:no-repeat; background-size:100% 100%;height:100px;border:transparent; height:180px;"><img src="commodity/store1-1.png" height="122px" style:"margin-top:30px"/>
+                            <h3 style="color:#222222;margin:0px;font-weight:normal;">可可豆莢◆即溶香濃可可粉◆</h3>
+                            <h3 style="color:red;margin:0px;font-weight:normal;">特價$460</h3>
+                        </a>
+                        <img src="pic/shopping_bag.png" style="width:150px;position:absolute;top:45%;left:60%;" onclick="suc();">
+                    </li>
+                </ul>
+            </div>
+
+                <div data-role="navbar">
+                <ul style="width:100%;">
+                    <li>
+                        <a href="#" id="btn1" rel="external" style="background-image:url(pic/bookshelf3.png); background-repeat:no-repeat; background-size:100% 100%;height:100px;border:transparent; height:180px;"><img src="commodity/store1-3.png" height="122px"/>
+                            <h3 style="color:#222222;margin:0px;font-weight:normal;">即溶公平貿易◆藜麥可可粉◆</h3>
+                            <h3 style="color:red;margin:0px;font-weight:normal;">特價$400</h3>
+                        </a>
+                        <img src="pic/shopping_bag.png" style="width:150px;position:absolute;top:45%;left:60%;" onclick="suc();">
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="#page1" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
