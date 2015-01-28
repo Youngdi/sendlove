@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>派達心</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <script type="text/javascript" src="youtube.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="Html5Video.js"></script>
+    <script type="text/javascript" src="function.js"></script>
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.min.css" />
+    <script src="jqm/jquery-2.1.1.min.js"></script>
+    <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+    <script src="lib/sweet-alert.js"></script>
+    <script type="text/javascript">
+    function commit() {
+        swal({
+            title: "確定修改?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "確定",
+            cancelButtonText: "取消",
+            closeOnConfirm: false
+        }, function() {
+            $("#account").text("個人資料修改成功");
+            swal("恭喜!", "修改成功", "success");
+        });
+    }
+
+    function commit_error() {
+        swal({
+            title: "確定修改?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "確定",
+            cancelButtonText: "取消",
+            closeOnConfirm: false
+        }, function() {
+            $("#account_pin").append("<H1 style='text-align:center; color:red;'>密碼不符合，修改失敗</H1>");
+            swal("密碼不符合!", "修改失敗", "error");
+        });
+    }
+
+    function change_present() {
+        swal({
+            title: "確定兌換?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "確定",
+            cancelButtonText: "取消",
+            closeOnConfirm: false
+        }, function() {
+            $("#get_present_state").append("<H1 style='text-align:center; color:red;'>兌換成功</H1>");
+            $("#red_number").remove();
+            $("#red_number_1").append("0");
+        });
+    }
+
+    function change_present_error() {
+        swal({
+            title: "確定兌換?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "確定",
+            cancelButtonText: "取消",
+            closeOnConfirm: false
+        }, function() {
+            $("#get_present_state").remove();
+            $("#get_present_state_1").append("<H1 style='text-align:center; color:red;'>點數不足，兌換失敗</H1>");
+        });
+    }
+    </script>
+    <style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="page0" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="#page0" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+
+        <div data-role="main" class="ui-content">
+                <ul data-role='listview' data-inset="true" >
+                    <li style="border:transparent;">
+                        <img src="logo/logo10.png"    width="80px" >
+                        <h2>使用者：楊祐誠</h2>
+                        <h3>紅利點數：200</h3>
+                    </li>
+                </ul>
+
+            <ul data-role="listview" data-inset="true" data-theme="a">
+                <li>
+                    <a href="#page1" style="text-decoration:none">
+                        <h3>帳戶資料</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#page2" style="text-decoration:none">
+                        <h3>消費記錄</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#page5" style="text-decoration:none">
+                        <h3>紅利點數</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#page7" style="text-decoration:none">
+                        <h3>常見問題</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#page8" style="text-decoration:none">
+                        <h3>序號兌換</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#page6" style="text-decoration:none">
+                        <h3>通知設定</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------page1------------------------------------------------------------- -->
+
+    <div data-role="page" id="page1" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="#page0" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ul data-role='listview' data-inset="true" >
+                    <li style="border:transparent;">
+                        <img src="logo/logo10.png"    width="80px" >
+                        <h2>使用者：楊祐誠</h2>
+                        <h3>紅利點數：200</h3>
+                    </li>
+                </ul>
+            <ul data-role="listview" data-inset="true" data-theme="a">
+                <li>
+                    <a href="#page3" style="text-decoration:none;border:transparent;">
+                        <h1>修改帳號</h1>
+                    </a>
+                </li>
+                <li>
+                    <a href="#page4" style="text-decoration:none;border:transparent;">
+                        <h1>修改密碼</h1>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="#page1" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ---------------------------------------page2消費紀錄------------------------------------------------------------- -->
+
+
+    <div data-role="page" id="page2" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="#page0" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <H2 style="text-align: center;">訂單查詢</H2>
+            <center>
+                <table>
+                    <tr>
+                        <th>訂單標號</th>
+                        <th>訂購日期</th>
+                        <th>總共金額</th>
+                    </tr>
+                    <tr bgcolor="#99BBFF">
+                        <td><a href="#">A201412140001</a>
+                        </td>
+                        <td>2014/12/14</td>
+                        <td>$1100</td>
+                    </tr>
+                    <tr bgcolor="#D28EFF">
+                        <td><a href="#">A201412070018</a>
+                        </td>
+                        <td>2014/12/7</td>
+                        <td>$1600</td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="#page1" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------page3修改帳號------------------------------------------------------------- -->
+
+
+    <div data-role="page" id="page3" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="#page0" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div>
+                <h2 style="text-align: center;">修改帳號</h2>
+                <h1 id="account" style='text-align:center; color:blue;'></h1>
+                <label for="usrnm">姓名：</label>
+                <input type="text" name="user" id="usrnm" placeholder="王小明" data-theme="a">
+                <label for="usrnm">生日：</label>
+                <input type="text" name="user" id="usrnm" placeholder="1988/6/11" data-theme="a">
+                <label for="usrnm">地址：</label>
+                <input type="text" name="user" id="usrnm" placeholder="台北市信義區" data-theme="a">
+                <label for="usrnm">市話：</label>
+                <input type="text" name="user" id="usrnm" placeholder="04-22471111" data-theme="a">
+                <label for="usrnm">行動電話：</label>
+                <input type="text" name="user" id="usrnm" placeholder="0987654321" data-theme="a">
+                <label for="usrnm">信箱：</label>
+                <input type="text" name="user" id="usrnm" placeholder="a123@yahoo.com.tw" data-theme="a">
+                <br>
+                <button onclick="commit()" data-theme="a" style="background:#FFFFFF;">送出</button>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="#page1" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------page4修改密碼------------------------------------------------------------- -->
+
+
+    <div data-role="page" id="page4" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="#page0" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div>
+                <H2 style="text-align: center;">修改密碼</H2>
+                <div id="account_pin"></div>
+                <label for="usrnm">目前密碼：</label>
+                <input type="password" name="user" id="usrnm" data-theme="a">
+                <label for="usrnm">更改密碼：</label>
+                <input type="password" name="user" id="usrnm" data-theme="a">
+                <label for="usrnm">確認密碼：</label>
+                <input type="password" name="user" id="usrnm" data-theme="a">
+                <br/>
+                <button onclick="commit_error()" data-theme="a" style="background:#FFFFFF;">送出</button>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="#page1" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------page5紅利積點------------------------------------------------------------- -->
+
+
+    <div data-role="page" id="page5" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="#page0" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content">
+        <center><h1>紅利兌換</h1></center>
+            <div id="get_present_state"></div>
+            <div id="get_present_state_1"></div>
+            <ul data-role='listview' data-inset="true" data-theme="a">
+                <li>
+                    <a href="#" onclick="change_present()"><img src="commodity/store2-3.png" width="80px">
+                        <H1 style="color:black;">焙炒烏豆 (沖泡型) 12小包</H1>
+                        <span style="color:red" id="red_number">100</span>
+                        <span style="color:red;"id="red_number_1"></span>
+                        /100
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="change_present_error()"><img src="commodity/store2-5.png" width="80px">
+                        <H1 style="color:black;">涼麵醬</H1><span style="color:red">50</span>/100
+                    </a>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="#page1" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------page6設定------------------------------------------------------------- -->
+
+
+    <div data-role="page" id="page6" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="#page0" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div data-role="navbar">
+                <H2 style="text-align: center;">通知設定</H2>
+                <center>
+                    <div data-role="fieldcontain">
+                        <label for="functionSwitch">推播:</label>
+                        <select name="functionSwitch" id="functionSwitch" data-role="slider" data-theme="a">
+                            <option value="off">開啟</option>
+                            <option value="on">關閉</option>
+                        </select>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="functionSwitch">音效:</label>
+                        <select name="functionSwitch" id="functionSwitch" data-role="slider" data-theme="a">
+                            <option value="off">開啟</option>
+                            <option value="on">關閉</option>
+                        </select>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="functionSwitch">震動:</label>
+                        <select name="functionSwitch" id="functionSwitch" data-role="slider" data-theme="a">
+                            <option value="off">開啟</option>
+                            <option value="on">關閉</option>
+                        </select>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="#page1" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------page7常見問題------------------------------------------------------------- -->
+
+
+    <div data-role="page" id="page7" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="#page0" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content" data-theme="a">
+            <div data-role="collapsible" data-theme="a" style="background:#FFFFEB;">
+                <h3>如何得知我的訂單資料及確認是否訂購成功？</h3>
+                <p>您可登入會員後，點選「查詢訂單」即可得知所有購買記錄及明細</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="a" style="background:#FFFFEB;">
+                <H3>如何使用商品搜尋？</H3>
+                <p>您只需在商品搜尋的欄位上打上您想要查詢的商品關鍵字，即可查詢到您想要選購的商品。</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="a" style="background:#FFFFEB;">
+                <H3>商品訂錯或不滿意，可以直接換購其他商品嗎？</H3>
+                <p>為了確保您的消費權益，您訂購的商品即為出貨之商品，故無法直接以退補差額方式來換購其它商品。</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="a" style="background:#FFFFEB;">
+                <H3>若我填寫的資料不完整或不正確，可以收到貨嗎？</H3>
+                <p>若您提供的訂購人或收貨人相關資料不完整或不正確，udn買東西購物中心將會自動取消您的訂單，您將不會收到貨</p>
+            </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="a" style="background:#FFFFEB;">
+                <H3>請問可以到店面看貨購買嗎？可以親自取貨嗎？</H3>
+                <p>我們為了提供消費者更專業、便利的購物環境，目前專心經營網路購物中心，故暫時沒有實體店面可以提供客戶現場購買。</p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="#page1" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ---------------------------------------page8序號兌換------------------------------------------------------------- -->
+
+
+    <div data-role="page" id="page8" data-theme="c" style="background-image:url(pic/BG_pleft.png); background-repeat:no-repeat; background-size:100% 100%;">
+        <div data-role="header" data-position="fixed" style="background-image:url(pic/header_new01.png); background-repeat:no-repeat; background-size:100% 100%; height:60px;border:transparent;">
+            <h1>&nbsp;</h1>
+            <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
+            <a href="#page0" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div>
+                <H2 style="text-align: center;">序號兌換</H2>
+                <label for="usrnm">輸入序號</label>
+                <input type="text" name="user" id="usrnm" data-theme="a">
+                <br>
+                <button onclick="change_present()" data-theme="a" style="background:#FFFFFF;">送出</button>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" style="border:transparent;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page0" id="btn1" rel="external" style="background-image:url(pic/home.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn1()">&nbsp;</a>
+                    </li>
+                    <li><a href="#page1" id="btn2" rel="external" style="background-image:url(pic/buy.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn2()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn3" rel="external" style="background-image:url(pic/search.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn3()">&nbsp;</a>
+                    </li>
+                    <li><a href="" id="btn4" rel="external" style="background-image:url(pic/gift.png); background-repeat:no-repeat; background-size:100% 100%;height:60px;border:transparent;" onClick="btn4()">&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "framework": {
+                "parents": {
+                    "MediaPlayer.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "AVFoundation.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "JavaScriptCore.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"YoutubeVideoPlayer\"><param name=\"ios-package\" value=\"YoutubeVideoPlayer\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PushPlugin\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "UIBackgroundModes": [
+                        {
+                            "xml": "<array><string>remote-notification</string></array>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "android.support.v4": {
+            "PACKAGE_NAME": "sohot.twbbs.org.send-love"
+        },
+        "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
+            "PACKAGE_NAME": "sohot.twbbs.org.send-love"
+        },
+        "com.google.playservices": {
+            "PACKAGE_NAME": "sohot.twbbs.org.send-love"
+        },
+        "com.vladstirbu.cordova.promise": {
+            "PACKAGE_NAME": "sohot.twbbs.org.send-love"
+        },
+        "jaeger.Html5Video": {
+            "PACKAGE_NAME": "sohot.twbbs.org.send-love"
+        },
+        "org.jboss.aerogear.cordova.push": {
+            "PACKAGE_NAME": "sohot.twbbs.org.send-love"
+        }
+    },
+    "dependent_plugins": {
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "sohot.twbbs.org.send-love"
+        }
+    }
+}

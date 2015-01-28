@@ -1,0 +1,67 @@
+2015-01-28 18:58:20.346 派達心[24461:174592] Apache Cordova native platform version 3.7.0 is starting.
+2015-01-28 18:58:20.362 派達心[24461:174592] Multi-tasking -> Device: YES, App: YES
+2015-01-28 18:58:20.389 派達心[24461:174592] Unlimited access to network resources
+2015-01-28 18:58:20.420 派達心[24461:174592] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-01-28 18:58:21.650 派達心[24461:174592] active
+2015-01-28 18:58:22.008 派達心[24461:174592] Resetting plugins due to page load.
+2015-01-28 18:58:22.128 派達心[24461:174592] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/169698E1-A25F-44F2-B5AE-C7EC8E2E05AB/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/index.html
+2015-01-28 18:58:22.131 派達心[24461:174592] Resetting plugins due to page load.
+2015-01-28 18:58:23.150 派達心[24461:174592] register
+2015-01-28 18:58:23.163 派達心[24461:174592] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/169698E1-A25F-44F2-B5AE-C7EC8E2E05AB/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/home.html
+2015-01-28 18:58:26.410 派達心[24461:174592] Resetting plugins due to page load.
+2015-01-28 18:58:27.339 派達心[24461:174592] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/169698E1-A25F-44F2-B5AE-C7EC8E2E05AB/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/store2.html
+2015-01-28 18:58:37.934 派達心[24461:174592] Resetting plugins due to page load.
+2015-01-28 18:58:38.504 派達心[24461:174592] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/169698E1-A25F-44F2-B5AE-C7EC8E2E05AB/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/buy_list.html
+2015-01-28 18:58:41.920 派達心[24461:174592] Resetting plugins due to page load.
+2015-01-28 18:58:42.134 派達心[24461:174592] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/169698E1-A25F-44F2-B5AE-C7EC8E2E05AB/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/home.html
+2015-01-28 18:58:42.190 派達心[24461:174592] register
+2015-01-28 18:58:44.040 派達心[24461:174592] Resetting plugins due to page load.
+2015-01-28 18:58:44.301 派達心[24461:174592] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/169698E1-A25F-44F2-B5AE-C7EC8E2E05AB/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/store2.html
+2015-01-28 19:03:52.453 派達心[25550:179631] Apache Cordova native platform version 3.7.0 is starting.
+2015-01-28 19:03:52.454 派達心[25550:179631] Multi-tasking -> Device: YES, App: YES
+2015-01-28 19:03:52.456 派達心[25550:179631] Unlimited access to network resources
+2015-01-28 19:03:52.459 派達心[25550:179631] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-01-28 19:03:52.756 派達心[25550:179631] active
+2015-01-28 19:03:52.906 派達心[25550:179631] Resetting plugins due to page load.
+2015-01-28 19:03:53.002 派達心[25550:179631] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/CFD2D108-2ABB-46A3-96DE-CB787C756997/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/index.html
+2015-01-28 19:03:53.005 派達心[25550:179631] Resetting plugins due to page load.
+2015-01-28 19:03:53.461 派達心[25550:179631] register
+2015-01-28 19:03:53.520 派達心[25550:179631] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/CFD2D108-2ABB-46A3-96DE-CB787C756997/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/home.html
+2015-01-28 19:03:55.285 派達心[25550:179631] Resetting plugins due to page load.
+2015-01-28 19:03:55.689 派達心[25550:179631] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/CFD2D108-2ABB-46A3-96DE-CB787C756997/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/store2.html
+2015-01-28 19:35:00.054 派達心[25550:192175] Terminating since there is no system app.
+2015-01-28 20:16:48.182 派達心[31521:223250] Apache Cordova native platform version 3.7.0 is starting.
+2015-01-28 20:16:48.184 派達心[31521:223250] Multi-tasking -> Device: YES, App: YES
+2015-01-28 20:16:48.217 派達心[31521:223250] Unlimited access to network resources
+2015-01-28 20:16:48.222 派達心[31521:223250] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-01-28 20:16:48.541 派達心[31521:223250] active
+2015-01-28 20:16:48.712 派達心[31521:223250] Resetting plugins due to page load.
+2015-01-28 20:16:48.795 派達心[31521:223250] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/48FD29C5-BA24-4377-998E-82225E97A8D1/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/index.html
+2015-01-28 20:16:48.796 派達心[31521:223250] Resetting plugins due to page load.
+2015-01-28 20:16:49.311 派達心[31521:223250] register
+2015-01-28 20:16:49.407 派達心[31521:223250] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/48FD29C5-BA24-4377-998E-82225E97A8D1/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/home.html
+2015-01-28 20:16:56.455 派達心[31521:223250] Resetting plugins due to page load.
+2015-01-28 20:16:57.207 派達心[31521:223250] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/48FD29C5-BA24-4377-998E-82225E97A8D1/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/store2.html
+2015-01-28 20:17:17.010 派達心[31521:223250] Resetting plugins due to page load.
+2015-01-28 20:17:17.234 派達心[31521:223250] Finished load of: file:///Users/mac/Library/Developer/CoreSimulator/Devices/F5DA92C8-BE6D-4DDA-AC87-32D69AF82119/data/Containers/Bundle/Application/48FD29C5-BA24-4377-998E-82225E97A8D1/%E6%B4%BE%E9%81%94%E5%BF%83.app/www/buy_list.html

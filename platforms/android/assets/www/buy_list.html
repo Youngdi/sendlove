@@ -8,47 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-    <script type="text/javascript" src="YoutubeVideoPlayer.js"></script>
+    <script type="text/javascript" src="youtube.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="Html5Video.js"></script>
     <script type="text/javascript" src="function.js"></script>
-    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.min.css" />
     <script src="jqm/jquery-2.1.1.min.js"></script>
     <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
     <script src="lib/sweet-alert.js"></script>
-    <script type="text/javascript">
-    function rightbuy() {
-        swal({
-            title: "確定購買?",
-            text: "金額總共:1100$",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "確定",
-            cancelButtonText: "取消",
-            closeOnConfirm: false
-        }, function() {
-            window.location.href = "buy_list.html#page3";
-        });
-    }
-
-    function rightbuy2() {
-        swal({
-            title: "確定結帳?",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "確定",
-            cancelButtonText: "取消",
-            closeOnConfirm: false
-        }, function() {
-            YoutubeVideoPlayer.openVideo('q3trvWJxndM');
-            window.location.href = "home.html";
-        });
-    }
-    </script>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script type="text/javascript" src="js/exitapp.js"></script>
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 </head>
 
 <body>
@@ -97,35 +68,10 @@
             <a href="user_data.html" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
         </div>
         <div data-role="main" class="ui-content">
-            <ul data-role='listview' data-inset="true" data-theme="a">
-                <li>
-                    <img src="commodity/store1-2.png" width="80px" style="margin-top:50px;">
-                    <H1 style="color:#222222;">公平貿易◆巧克力脆米◆</H1>
-                    <h2 style="color:red;">特價$350</h2>
-                    <span>可購買</span>
-                    <select  data-native-menu="false" data-theme="a">
-                        <option >1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option >4</option>
-                        <option >5</option>
-                    </select>
-                </li>
-                <li>
-                    <img src="commodity/store1-3.png" width="80px" style="margin-top:50px;">
-                    <H1 style="color:#222222;">即溶公平貿易◆藜麥可可粉◆</H1>
-                    <h2 style="color:red;">特價$400</h2>
-                    <span>可購買</span>
-                    <select  data-native-menu="false" data-theme="a">
-                        <option >1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option >4</option>
-                        <option >5</option>
-                    </select>
-                </li>
+            <ul data-role='listview' data-inset="true" data-theme="a" id="cart_list">
+                <!-- 放商品區 -->
             </ul>
-            <button onclick="rightbuy();" data-theme="a" style="background:#FFFFFF;">確定結帳</button>
+            <button id="checkout" onclick="rightbuy();" data-theme="a" style="background:#FFFFFF;">確定結帳</button>
         </div>
 
         <div data-role="footer" data-position="fixed" style="border:transparent;">
@@ -184,6 +130,88 @@
                 </ul>
             </div>
         </div>
+        <script>
+        $('#cart_list').empty();
+        $.ajax({
+                 // http://youngdi.byethost18.com/php_function/sendlove/
+                url: 'http://youngdi.byethost18.com/php_function/sendlove/cart.php',
+                // url: 'cart.php',
+            })
+            .done(function(data) {
+                $('#cart_list').empty();
+                if (data.length == 29) {
+                    $('#cart_list').append(data);
+                    $('#checkout').remove();
+                } else {
+                    var json_string = data;
+                    var result = JSON.parse(json_string);
+                    var count = 0;
+                    $.each(result.item, function(i, item) {
+                        // <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                        count = i;
+                        $('#cart_list').append('<li id="A' + item.id + '"><img id="money" money="' + result.total_price + '" src="commodity/' + item.img + '" width="80px" style="margin-top:50px;"/><H1 style="color:#222222;">' + item.name + '</H1><h2 style="color:red;">特價$' + item.price + '</h2><span>可購買</span><center><select id="zone' + item.id + '" data-native-menu="false" data-theme="a"></select><form id="remove_form" name="form" method="GET" action="http://youngdi.byethost18.com/php_function/sendlove/remove_from_cart.php"><input type="hidden" name="id" value="' + item.id + '"/><button>刪除</button></form></center></li>');
+                        for (i = 0; i < item.quantity + 1; i++) {
+                            var s = document.getElementById('zone' + item.id + '');
+                            var new_option = new Option(i, item.name);
+                            s.options.add(new_option);
+                        }
+                    });
+                    $('#remove_form').ajaxForm(function(data) {
+                        // alert(data); //判斷用的
+                        if (count === 0) {
+                            // alert(count);
+                            $('#checkout').remove();
+                            $('#A' + data + '').remove();
+                            $('#cart_list').append('<center>沒有商品在你的購物籃喔！</center>');
+                        } else {
+                            count = count - 1;
+                            // alert(count);
+                            $('#A' + data + '').remove();
+                        }
+                    });
+                }
+            });
+
+        function rightbuy() {
+            $.ajax({
+                    url: 'http://youngdi.byethost18.com/php_function/sendlove/cart.php',
+                    // url: 'cart.php',
+                    type: 'GET',
+                    dataType: 'json',
+                })
+                .done(function(data) {
+                    console.log(data.total_price);
+                    total_price = data.total_price;
+                    swal({
+                        title: "確定購買?",
+                        text: '金額總共:' + total_price + '$',
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "確定",
+                        cancelButtonText: "取消",
+                        closeOnConfirm: false
+                    }, function() {
+                        window.location.href = "buy_list.html#page3";
+                    });
+                });
+        }
+
+        function rightbuy2() {
+            swal({
+                title: "確定結帳?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "確定",
+                cancelButtonText: "取消",
+                closeOnConfirm: false
+            }, function() {
+                YoutubeVideoPlayer.openVideo('q3trvWJxndM');
+                window.location.href = "home.html";
+            });
+        }
+        </script>
 </body>
 
 </html>

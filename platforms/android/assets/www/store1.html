@@ -12,16 +12,13 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="Html5Video.js"></script>
     <script type="text/javascript" src="function.js"></script>
-    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.min.css" />
     <script src="jqm/jquery-2.1.1.min.js"></script>
-    <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
     <script src="lib/sweet-alert.js"></script>
-    <script type="text/javascript">
-    function suc() {
-        swal("恭喜!", "成功放入購物車", "success");
-    }
-    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script type="text/javascript" src="js/exitapp.js"></script>
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 </head>
 
 <body>
@@ -41,7 +38,7 @@
             <center>
                 <ul data-role='listview' data-inset="false" style="width:90%;">
                     <li style="border:transparent;background-image:url(pic/con2.png); background-repeat:no-repeat; background-size:100% 100%;">
-                        <center style="margin-top:0px;"><img src="pic/tt.png"  width="140px" />
+                        <center style="margin-top:0px;"><img src="pic/tt.png" width="140px" />
                         </center>
                         <h3 style="white-space:normal; margin-top:0px; margin-bottom:50px;font-weight:normal;">
                        <center> { 我們的社會目的是… }</center><br/>
@@ -78,83 +75,38 @@
             <a href="#" style="border:transparent;background-image:url(pic/header_left.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px;">&nbsp;</a>
             <a href="user_data.html" rel="external" style="border:transparent;background-image:url(pic/header_right.png); background-repeat:no-repeat; background-size:100% 100%; height:24px; width:18px">&nbsp;</a>
         </div>
+
+        <!-- 商品區 -->
         <div data-role="main" class="ui-content">
 
-            <div data-role="navbar">
-                <ul style="width:100%;">
-                    <li>
-                        <a href="#" id="btn1" rel="external" style="background-image:url(pic/bookshelf1.png); background-repeat:no-repeat; background-size:100% 100%;height:100px;border:transparent; height:180px;"><img src="commodity/store1-1.png" height="122px" style:"margin-top:30px"/>
-                            <h3 style="color:#222222;margin:0px;font-weight:normal;">可可豆莢◆即溶香濃可可粉◆</h3>
-                            <h3 style="color:red;margin:0px;font-weight:normal;">特價$460</h3>
-                        </a>
-                        <img src="pic/shopping_bag.png" style="width:150px;position:absolute;top:45%;left:60%;" onclick="suc();">
-                    </li>
-                </ul>
-            </div>
+            <div id="store1_item"></div>
 
-            <div data-role="navbar">
-                <ul style="width:100%;">
-                    <li>
-                        <a href="#" id="btn1" rel="external" style="background-image:url(pic/bookshelf2.png); background-repeat:no-repeat; background-size:100% 100%;height:100px;border:transparent; height:180px;"><img src="commodity/store1-2.png" height="122px"/>
-                            <h3 style="color:#222222;margin:0px;font-weight:normal;">公平貿易◆巧克力脆米◆</h3>
-                            <h3 style="color:red;margin:0px;font-weight:normal;">特價$350</h3>
-                        </a>
-                        <img src="pic/shopping_bag.png" style="width:150px;position:absolute;top:45%;left:60%;" onclick="suc();">
-                    </li>
-                </ul>
-            </div>
-
-            <div data-role="navbar">
-                <ul style="width:100%;">
-                    <li>
-                        <a href="#" id="btn1" rel="external" style="background-image:url(pic/bookshelf3.png); background-repeat:no-repeat; background-size:100% 100%;height:100px;border:transparent; height:180px;"><img src="commodity/store1-3.png" height="122px"/>
-                            <h3 style="color:#222222;margin:0px;font-weight:normal;">即溶公平貿易◆藜麥可可粉◆</h3>
-                            <h3 style="color:red;margin:0px;font-weight:normal;">特價$400</h3>
-                        </a>
-                        <img src="pic/shopping_bag.png" style="width:150px;position:absolute;top:45%;left:60%;" onclick="suc();">
-                    </li>
-                </ul>
-            </div>
-
-            <div data-role="navbar">
-                <ul style="width:100%;">
-                    <li>
-                        <a href="#" id="btn1" rel="external" style="background-image:url(pic/bookshelf1.png); background-repeat:no-repeat; background-size:100% 100%;height:100px;border:transparent; height:180px;"><img src="commodity/store1-4.png" height="122px" style:"margin-top:30px"/>
-                            <h3 style="color:#222222;margin:0px;font-weight:normal;">瀘泡式掛耳包◆環保綠(清香)◆</h3>
-                            <h3 style="color:red;margin:0px;font-weight:normal;">特價$280</h3>
-                        </a>
-                        <img src="pic/shopping_bag.png" style="width:150px;position:absolute;top:45%;left:60%;" onclick="suc();">
-                    </li>
-                </ul>
-            </div>
-
-            <div data-role="navbar">
-                <ul style="width:100%;">
-                    <li>
-                        <a href="#" id="btn1" rel="external" style="background-image:url(pic/bookshelf2.png); background-repeat:no-repeat; background-size:100% 100%;height:100px;border:transparent; height:180px;"><img src="commodity/store1-5.png" height="122px"/>
-                            <h3 style="color:#222222;margin:0px;font-weight:normal;">新鮮烘焙咖啡豆◆衣索比亞耶加雪菲◆</h3>
-                            <h3 style="color:red;margin:0px;font-weight:normal;">特價$400</h3>
-                        </a>
-                        <img src="pic/shopping_bag.png" style="width:150px;position:absolute;top:45%;left:60%;" onclick="suc();">
-                    </li>
-                </ul>
-            </div>
-
-            <div data-role="navbar">
-                <ul style="width:100%;">
-                    <li>
-                        <a href="#" id="btn1" rel="external" style="background-image:url(pic/bookshelf3.png); background-repeat:no-repeat; background-size:100% 100%;height:100px;border:transparent; height:180px;"><img src="commodity/store1-6.png" height="122px"/>
-                            <h3 style="color:#222222;margin:0px;font-weight:normal;">有機南非國寶茶◆柑橘◆</h3>
-                            <h3 style="color:red;margin:0px;font-weight:normal;">特價$190</h3>
-                        </a>
-                        <img src="pic/shopping_bag.png" style="width:150px;position:absolute;top:45%;left:60%;" onclick="suc();">
-                    </li>
-                </ul>
-            </div>
-
-            
-
-          </div>
+            <script>
+                $.ajax({
+                        // http://youngdi.byethost18.com/php_function/sendlove/
+                        url:'http://youngdi.byethost18.com/php_function/sendlove/products.php',
+                        // url: 'products.php',
+                        type: 'GET',
+                        data: {
+                            store_number: "生態綠"
+                        }
+                    })
+                    .done(function(data) {
+                        console.log(data);
+                        var json_string = data;
+                        var result = JSON.parse(json_string);
+                        // $('#store1_item').append(data);
+                        $.each(result.item, function(i, item) {
+                            $('#store1_item').append('<div data-role="navbar"><ul style="width:100%;"><li><a href="#" id="btn1" rel="external" style="background-image:url(pic/bookshelf1.png); background-repeat:no-repeat; background-size:100% 100%;height:100px;border:transparent; height:180px;"><img src="commodity/' + item.img + '" height="122px" style:"margin-top:30px"/><h3 style="color:#222222;margin:0px;font-weight:normal;">' + item.name + '</h3><h3 style="color:red;margin:0px;font-weight:normal;">特價$' + item.price + '</h3></a><form id="addform" name="form" method="GET" action="http://youngdi.byethost18.com/php_function/sendlove/add_to_cart.php"><input type="image" src="pic/shopping_bag.png" style="width:150px;position:absolute;top:45%;left:60%;" onClick="document.addform.submit();"><input type="hidden" name="id" value="' + item.id + '"/><input type="hidden" name="name" value="' + item.name + '"/></form></li></ul></div>');
+                        });
+                        $('#addform').ajaxForm(function(data) {
+                            swal(data);
+                        });
+                    });
+       
+            </script>
+        </div>
+        <!-- 商品區 -->
 
         <div data-role="footer" data-position="fixed" style="border:transparent;">
             <a data-rel="back" style=" position:absolute; bottom:60px; left:0px ;border:transparent;"><img src="pic/rmove.png" width="50px" />
@@ -173,6 +125,7 @@
             </div>
         </div>
     </div>
+    <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
 </body>
 
 </html>

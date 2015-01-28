@@ -1,2 +1,2 @@
-/Users/mac/desktop/sendlove/platforms/android/ant-build/AndroidManifest.xml : \
-/Users/mac/desktop/sendlove/platforms/android/AndroidManifest.xml \
+/Applications/XAMPP/xamppfiles/htdocs/sendlove/platforms/android/ant-build/AndroidManifest.xml : \
+/Applications/XAMPP/xamppfiles/htdocs/sendlove/platforms/android/AndroidManifest.xml \
